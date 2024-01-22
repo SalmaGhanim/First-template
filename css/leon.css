@@ -11,7 +11,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    /* margin-right: 0px; */
+    max-width: 100%;
 }
 html{
     scroll-behavior: smooth;
@@ -226,13 +226,21 @@ body{
 .services{
     padding-top: 60px;
     padding-bottom: 60px;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 .services .container{
     padding: 50px;
+    padding-left: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     margin: 0px auto;
+}
+.services .container .col{
+    width: 100%;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .services .container .srv{
@@ -349,22 +357,26 @@ body{
     position: relative;
 }
 @media (max-width:992px){
-    .about .container .image{
+    /* .about .container .image{
         transform: translate(40% , 0);
         -webkit-transform: translate(40% , 0);
         -moz-transform: translate(40% , 0);
         -ms-transform: translate(40% , 0);
         -o-transform: translate(40% , 0);
         
-    }
+    } */
 }
 @media (max-width: 768px) {
-    .about .container .image{
+    /* .about .container .image{
         transform: translate(20% , 0);
         -webkit-transform: translate(20% , 0);
         -moz-transform: translate(20% , 0);
         -ms-transform: translate(20% , 0);
         -o-transform: translate(20% , 0);
+    } */
+    .about .container .image::before,
+    .about .container .image::after{
+        display: none;
     }
 }
 .about .container .image img{
@@ -431,11 +443,17 @@ body{
 }
 
 .contact .container{
-    margin: 20px auto;padding-left: calc(var(--main-padding + 100px));
+    margin: 20px auto;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+@media (min-width: 768px){
+    .contact .container {
+        padding-left: var(--main-padding ) ;
+    }
 }
 .contact .container .text{
     font-size: 35px;
@@ -480,3 +498,11 @@ body{
     color: var(--main-color);
 }
 /*End of footer*/
+/*arrow up*/
+.up{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    color:var(--main-color);
+
+}
